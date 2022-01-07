@@ -5,7 +5,7 @@ export interface IField{
     label:string;
     placeholder?: string;
     type: Type;
-    width: string;
+    width: string | number;
     options?: string[];
     required?: boolean;
 }
