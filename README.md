@@ -34,7 +34,7 @@
   </li>
   <li>required - whether this field is mandatory or not</li>
     <li>placeholder - the placeholder of the input</li>
-    <li>width - width of the input in a row (0.5 for 50% and 1 for 100</li>
+    <li>width - width of the input in a row</li>
 </ol>
 
 ## Available Scripts
