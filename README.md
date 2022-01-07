@@ -1,6 +1,41 @@
-# Getting Started with Create React App
+## Dynamic Form Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### General
+1. Please clone this project and perform the task on your local machine.
+2. Please submit this project by a Github repo or a zip file.
+3. Good Luck :) 
+
+### Overview
+1. The purpose of this task is to build a simple dynamic form with matching types and validations based on a configuration scheme we provide to you.
+2. The form should be built dynamically on run time based on the form configuration located in the configuration folder.
+
+### Requirements:
+1. The form will load inputs and render components based on the configuration where order matters
+2. Based on the JSON configuration, the form input will inherit its type and validation
+
+### Technical requirements: 
+1. The form builder should be built using React.JS Hooks with Typescript
+2. All validations should be in place 
+3. The form MUST be responsive
+
+### The form fields scheme includes the following properties:
+<ol>
+  <li>key - this is the field key to be which is sent on the submit of the form in the result</li>
+  <li>Label - the input label</li>
+  <li>type - The type of the input field: 
+    <ul>
+      <li>string - an alphanumeric string</li>
+      <li>phone - phone number with country code</li>
+      <li>email - an email address</li>
+      <li>boolean</li>
+      <li>gender - male / female / other</li>
+      <li>options - a dropdown of options</li>
+    </ul>
+  </li>
+  <li>required - whether this field is mandatory or not</li>
+    <li>placeholder - the placeholder of the input</li>
+    <li>width - width of the input in a row (0.5 for 50% and 1 for 100</li>
+</ol>
 
 ## Available Scripts
 
