@@ -23,7 +23,7 @@
 
 ### The form fields scheme includes the following properties:
 <ol>
-  <li>key - this is the field key which should be sent the form submission object</li>
+  <li>key - this is the field key which should be sent on the form submission object</li>
   <li>Label - the input display label</li>
   <li>type - The type of the input field: 
     <ul>
