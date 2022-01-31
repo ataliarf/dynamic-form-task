@@ -4,7 +4,7 @@
 1. Please clone this project and perform the task on your local machine.
 2. Please submit this project by a new Github repo or a zip file.
 3. For ANY questions, feel free to contact me.
-4. Good Luck! :) 
+4. Good Luck! 
 
 ## Part 1 - Building a dynamic form
 
@@ -49,6 +49,12 @@
 3. After going through the Frontegg customer journey & integration, take some time and explore the [Frontegg portal](portal.frontegg.com), admin portal, and available features, and provide a feedback about a couple of bugs/UX issues/suggestions for improvement you find in the portal. Feel free to be creative:) 
 
 4. Automation - please provide a working example of a Cypress folder that tests your app in a simple login flow of user and password. It will be a bonus if you are able to also test your dynamic form. (We test quality better then quantity)
+
+
+
+Good Luck!
+
+
 
 ------
 
