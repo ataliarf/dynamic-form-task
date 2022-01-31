@@ -1,9 +1,12 @@
-## Dynamic Form Task
+# Frontegg Frontend + Automation Assignment
 
-### General
+### General Guidelines
 1. Please clone this project and perform the task on your local machine.
 2. Please submit this project by a new Github repo or a zip file.
-3. Good Luck :) 
+3. For ANY questions, feel free to contact me.
+4. Good Luck! :) 
+
+## Part 1 - Building a dynamic form
 
 ### Overview
 1. The purpose of this task is to build a simple dynamic form with matching types and validations based on a configuration scheme we provide to you.
@@ -36,6 +39,20 @@
     <li>placeholder - the placeholder of the input</li>
     <li>width - width of the input in a row</li>
 </ol>
+
+## Part 2 - Getting to know Frontegg and Cypress
+
+1. Sign-up to [Frontegg](https://frontegg.com/) with your private mail
+
+2. Integrate Frontegg to your dynamic form app, using the guide found in the [Frontegg portal](https://portal.frontegg.com/configure/authentication/builder/integrate) Or on [Frontegg’s documentation](https://docs.frontegg.com/docs/integration-quickstart)
+
+3. After going through the Frontegg customer journey & integration, take some time and explore the [Frontegg portal](portal.frontegg.com), admin portal, and available features, and provide a feedback about a couple of bugs/UX issues/suggestions for improvement you find in the portal. Feel free to be creative:) 
+
+4. Automation - please provide a working example of a Cypress folder that tests your app in a simple login flow of user and password. It will be a bonus if you are able to also test your dynamic form. (We test quality better then quantity)
+
+------
+
+### General React Guidlines
 
 ## Available Scripts
 
