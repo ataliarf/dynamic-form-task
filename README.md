@@ -2,7 +2,7 @@
 
 ### General
 1. Please clone this project and perform the task on your local machine.
-2. Please submit this project by a Github repo or a zip file.
+2. Please submit this project by a new Github repo or a zip file.
 3. Good Luck :) 
 
 ### Overview
@@ -15,13 +15,13 @@
 
 ### Technical requirements: 
 1. The form builder should be built using React.JS Hooks with Typescript
-2. All validations should be in place 
+2. All validations should be in place
 3. The form MUST be responsive
 
 ### The form fields scheme includes the following properties:
 <ol>
-  <li>key - this is the field key to be which is sent on the submit of the form in the result</li>
-  <li>Label - the input label</li>
+  <li>key - this is the field key which should be sent the form submission object</li>
+  <li>Label - the input display label</li>
   <li>type - The type of the input field: 
     <ul>
       <li>string - an alphanumeric string</li>
