@@ -1,0 +1,63 @@
+input[type=string],input[type=phone],input[type=email],input[type=boolean], select{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+  
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+  
+button[type=submit] {
+    background-color: #047baa;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+}
+  
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  /* Floating column for labels: 25% width */
+.leftCol {
+    float: left;
+    margin-top: 6px;
+}
+  
+  /* Floating column for inputs: 75% width */
+.rightCol {
+    float: left;
+    margin-top: 6px;
+}
+
+.alert {
+    color:rgb(179, 32, 63);
+    
+}
+
+button[type=submit]:hover {
+    background-color: #2576a5;
+}
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+@media screen and (max-width: 600px) {
+    .leftCol, .rightCol, button[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+}

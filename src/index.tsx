@@ -2,10 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { FronteggProvider } from '@frontegg/react';
+
+const contextOptions = {
+  baseUrl: 'https://app-nhowqmpxokqk.frontegg.com',
+};
 
 ReactDOM.render(
-  <React.StrictMode>
+  <FronteggProvider contextOptions={contextOptions}>
     <App />
-  </React.StrictMode>,
+    </FronteggProvider>,
   document.getElementById('root')
 );

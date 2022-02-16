@@ -6,6 +6,7 @@ export interface IField{
     placeholder?: string;
     type: Type;
     width: string | number;
+    value: string | boolean;
     options?: string[];
     required?: boolean;
 }
@@ -18,7 +19,8 @@ export const formScheme : {formFields: IField[]} = {
             placeholder: 'First Name',
             type: 'string',
             width: '50%',
-            required: true
+            required: true,
+            value: ""
         },
         {
             key: 'lastName',
@@ -26,7 +28,8 @@ export const formScheme : {formFields: IField[]} = {
             placeholder: 'Last Name',
             type: 'string',
             width: '50%',
-            required: true
+            required: true,
+            value: ""
 
         },
         {
@@ -35,7 +38,8 @@ export const formScheme : {formFields: IField[]} = {
             placeholder: '+972 ...',
             type: 'phone',
             width: '120',
-            required: true
+            required: true,
+            value:""
         },
         {
             key: 'emailAddress',
@@ -43,27 +47,31 @@ export const formScheme : {formFields: IField[]} = {
             placeholder: 'myEmail@...',
             type: 'email',
             width: '120',
-            required: true
+            required: true,
+            value:""
         },
         {
             key: 'gender',
             label: 'Your Gender',
             type: 'gender',
-            width: '100%'
+            width: '100%',
+            value:""
         },
         {
             key: 'consentApproval',
             label: 'Do you agree to the terms of use?',
             type: 'boolean',
             width: '100%',
-            required: true
+            required: true,
+            value: false
         },
         {
             key: 'companySize',
             label: 'Please select your company size',
             type: 'options',
             options: ['1-3', '4-20', '20-100', '100-500'],
-            width: '50%'
+            width: '50%',
+            value:""
         },
     ]
 }
