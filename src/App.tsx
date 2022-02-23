@@ -2,19 +2,18 @@ import React, { useCallback, useEffect, useState } from 'react';
 import './App.css';
 import './form.css';
 import { formScheme, IField } from "./configuration/formScheme";
-import { useAuth } from '@frontegg/react'
+import { useAuth } from '@frontegg/react';
+import Field from './components/Field';
 
 
 function App() {
     const { user, isAuthenticated } = useAuth();
 
     const dynamicFormScheme = formScheme;
-    const [elements, setElements] = useState<IField[]>([]);
-    useEffect(() => {
-        setElements(dynamicFormScheme.formFields);
-    }, [])
+    const [formFields, setformFields] = useState<IField[]>(dynamicFormScheme.formFields || []);
+ 
 
-    const [missingRequierd, setRequierd] = useState(false);
+    const [isMissingRequierdField, setRequierd] = useState(false);
     const [nameOfEmptyField, setName] = useState("");
     const [emailError, setEmailError] = useState(false);
     const [phoneError, setPhoneError] = useState(false);
@@ -30,7 +29,7 @@ function App() {
     }
 
     const handleChange = (key: string, event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
-        elements && elements.map((element: IField) => {
+        formFields && formFields.map((element: IField) => {
             if (key == element.key) {
                 element.value = event.target.value;
                 if(key=="emailAddress"){
@@ -52,23 +51,23 @@ function App() {
 
     const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
-        elements && elements.map((element: IField) => {
+        formFields && formFields.map((element: IField) => {
              if(element && element.required && (element.value=="" || element.value==false)){
                 setRequierd(true);
                  if(element.label=="Do you agree to the terms of use?")
                     setName("Your agreement to the terms of use");
                 else
                     setName(element.label);
-                 return;
+                return;
              }
          })
-         elements && elements.map((element: IField) => {
+         formFields && formFields.map((element: IField) => {
             console.log(element.key + ':' + ' ' + element.value);
             })
         }
 
     const handleClick = (key: string) => {
-        elements && elements.map((element: IField) => {
+        formFields && formFields.map((element: IField) => {
             if (key == element.key) {
                 element.value = (!element.value);
                 if(element.value)
@@ -87,78 +86,22 @@ function App() {
       )}
         <form className="form">
             <div>
-                {elements && elements.map((element: IField) => {
-                    switch (element.type) {
-                        case 'boolean':
-                            return (
-                                <div className="row">
-                                    <div className="leftCol">
-                                        <label>{element.label}</label>
-                                    </div>
-                                    <div className="rightCol">
-                                        <input onClick={() => handleClick(element.key)}
-                                            type="checkbox"
-                                            width={element.width}
-                                            required={element.required}/>      
-                                    </div>
-                                </div>)
-                        case 'options': return (
-                            <div className="row">
-                                <div className="leftCol">
-                                    <label>{element.label}</label>
-                                </div>
-                                <div className="rightCol">
-                                    <select onChange={event => handleChange(element.key, event)}>
-                                        <option value={'choose'}> {'choose'} </option>
-                                        {element && element.options && element.options.length > 0 && element.options.map((option) =>
-                                            <option value={option}>{option}</option>)}
-                                    </select>
-                                </div>
-                            </div>)
-                        case 'gender':
-                            return (
-                                <div className="row">
-                                    <div className="leftCol">
-                                        <label>{element.label}</label>
-                                    </div>
-                                    <div className="rightCol">
-                                        <select onChange={event => handleChange(element.key, event)}>
-                                            <option value={'choose'}> {'choose'} </option>
-                                            <option value={'Female'}>{'Female'}</option>
-                                            <option value={'Male'}>{'Male'}</option>
-                                            <option value={'Other'}>{'Other'}</option>
-                                        </select>
-                                    </div>
-                                </div>)
-                        default:
-                            return (
-                                <div className="row">
-                                    <div className="leftCol">
-                                        <label>{element.label}</label>
-                                    </div>
-                                    <div className="rightCol">
-                                        <input
-                                            onChange={event => handleChange(element.key, event)}
-                                            width={element.width}
-                                            required={element.required}
-                                            placeholder={element.placeholder}
-                                            type={element.type}/>      
-                                    </div>
-                                </div>
-                            )
-                    }
+                {formFields && formFields.map((element: IField) => {
+                   return <div> 
+                         <Field element={element}
+                          handleChange={handleChange}
+                           handleClick={handleClick}/> 
+                        </div>
                 })}
-                <div className="row">
-                    <div className="alert">{phoneError &&  <> Phone is not valid!</>}  </div>
+                 <div className="alert">{phoneError &&  <> Phone is not valid!</>}  </div>
                     <div className="alert">{emailError &&  <> Email is not valid!</>}  </div>
-                    <div className="alert">{missingRequierd && <> {nameOfEmptyField} is required</>}  </div>
+                    <div className="alert">{isMissingRequierdField && <> {nameOfEmptyField} is required</>}  </div>
                     <button type="submit" onClick={(e) => handleSubmit(e)}>Submit</button>
-                </div>
             </div>
         </form>
     </div>
 
-    );
+);
 }
 
 export default App;
